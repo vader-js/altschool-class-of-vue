@@ -4,7 +4,8 @@
 
 <script>
 import { ref } from "@vue/reactivity";
-export default function ColorComposable(){
+
+export default function usecolorComposable(){
     const colors = ["green", "red", "blue", "purple"];
     let message = ref("Pick a color...");
 
