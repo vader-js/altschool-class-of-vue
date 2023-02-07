@@ -1,20 +1,24 @@
 <script>
-import ColorPickerGame from "./components/ColorPickerGame.vue";
-import Recap_01_02_2023 from "./components/Recap_01_02_2023.vue";
+import ColorComposable from "./components/ColorComposable.vue";
 
 export default {
-  components: { ColorPickerGame, Recap_01_02_2023 },
-  data() {
-    return {
-      currentLesson: "color-picker-game",
-    };
-  },
+  components: { ColorComposable },
+  setup() {
+    const { colors, message, matchColor } = ColorComposable();
+
+   return {colors, message, matchColor}
+  }
 };
 </script>
 
 <template>
-  <ColorPickerGame v-if="currentLesson === 'color-picker-game'" />
-  <Recap_01_02_2023 v-else />
+   <h1>Color Picker Game</h1>
+
+  <div>{{ message }}</div>
+
+  <button v-for="color in colors" :key="color" @click="matchColor(color)">
+    {{ color }}
+  </button>
 </template>
 
 <style scoped></style>
