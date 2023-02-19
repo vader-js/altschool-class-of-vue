@@ -1,11 +1,11 @@
 <script>
-import usecolorComposable from "./components/ColorComposable.vue";
+import usecolorComposable from "./composables/ColorComposable.js";
 
 export default {
   components: { usecolorComposable },
   setup() {
     const { colors, message, matchColor } = usecolorComposable();
-
+ 
    return {colors, message, matchColor}
   }
 };
